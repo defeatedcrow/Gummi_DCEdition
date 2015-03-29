@@ -1,6 +1,6 @@
 # Gummi_DCEdition
 
-(Andante)氏作のGummiModを1.7.10向けに移植したものです。
+Andante氏作のGummiMod(Andante/AndanteMod)を1.7.10向けに移植したものです。
 
 ### 動作環境:
 ・Minecraft 1.7.10
