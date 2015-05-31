@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 public abstract class ItemFruitBase extends ItemFood {
 	
 	@SideOnly(Side.CLIENT)
-    private IIcon iconType[] = new IIcon[2];
+    protected IIcon[] iconType;
 	
 	
 	public ItemFruitBase (int reco, int sat, boolean flag)
@@ -73,6 +73,7 @@ public abstract class ItemFruitBase extends ItemFood {
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister par1IconRegister)
     {
+		this.iconType = new IIcon[2];
         this.iconType[0] = par1IconRegister.registerIcon("dcsgummi:" + this.getTextureName(0));
         this.iconType[1] = par1IconRegister.registerIcon("dcsgummi:" + this.getTextureName(1));
     }

@@ -51,7 +51,7 @@ public class LeavesDecayEvent {
 			
 			switch (m)
 			{
-			case 1:
+			case 0:
 				added = new ItemStack(DCsGummiCore.orange, 1, g);
 				break;
 			default:

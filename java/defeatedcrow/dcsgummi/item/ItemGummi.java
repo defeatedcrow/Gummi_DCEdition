@@ -23,7 +23,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ItemGummi extends ItemFood {
 	
 	@SideOnly(Side.CLIENT)
-    private IIcon iconType[] = new IIcon[8];
+    private IIcon[] iconType;
 	
 	
 	public ItemGummi (int reco, int sat, boolean flag)
@@ -67,6 +67,7 @@ public class ItemGummi extends ItemFood {
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister par1IconRegister)
     {
+		this.iconType = new IIcon[8];
 		for (int i = 0 ; i < iconType.length ; i++)
 		{
 			this.iconType[i] = par1IconRegister.registerIcon("dcsgummi:" + this.getTextureName(i));
@@ -119,6 +120,10 @@ public class ItemGummi extends ItemFood {
 			i = MathHelper.clamp_int(0, i, iconType.length - 1);
 			
 			this.formEffect(world, player, i);
+			
+			if (this.getHealAmount(i) > 0){
+				player.heal(this.getHealAmount(i));
+			}
 			
 			List<PotionEffect> effects = this.getFluitEffect(i);
 			if (effects == null || effects.isEmpty()) return;
@@ -211,7 +216,7 @@ public class ItemGummi extends ItemFood {
 	{
 		if (meta == 1)
 		{
-			player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id, 1, 0));
+			player.setAir(300);
 		}
 		else if (meta == 4)
 		{

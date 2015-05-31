@@ -21,7 +21,7 @@ import defeatedcrow.dcsgummi.item.*;
 @Mod(
 		modid = "DCsGummi",
 		name = "Gummi_DCEdition",
-		version = "1.7.10_1.0a",
+		version = "1.7.10_1.0c",
 		dependencies = "required-after:Forge@[10.13.2.1230,);after:DCsAppleMilk"
 		)
 public class DCsGummiCore {
